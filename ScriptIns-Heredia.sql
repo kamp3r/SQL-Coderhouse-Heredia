@@ -113,7 +113,8 @@ INSERT INTO sucursal VALUES (NULL, 'Paso de los libres 312', 4, 4),
 	(NULL, 'Av. de los Incas 546', 18, 18),
 	(NULL, 'Av Belgrano 23', 22, 22),
 	(NULL, 'Perito Moreno 101', 16, 16),
-	(NULL, 'Consejal Tribulato 999', 7, 7);
+	(NULL, 'Consejal Tribulato 999', 7, 7),
+    (NULL, 'Pareja 96', 24,24);
 
 INSERT INTO transacciones VALUES (NULL, 1, current_timestamp() ,1, 15000.00, 1),
 	(NULL, 2, current_timestamp() ,1, 1000000.00, 2),

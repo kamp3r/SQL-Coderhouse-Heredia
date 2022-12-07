@@ -27,11 +27,11 @@ PRIMARY KEY (id_localidad)
 );
 
 
-CREATE TABLE IF NOT EXISTS cliente(
+CREATE TABLE IF NOT EXISTS clientes(
 cliente_id INT NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(20) NOT NULL,
 apellido VARCHAR(20) NOT NULL,
-dni INT NOT NULL,
+dni VARCHAR(8) NOT NULL,
 direccion VARCHAR(50) NOT NULL,
 fecha_nacimiento DATE NOT NULL,
 PRIMARY KEY (cliente_id)
@@ -39,7 +39,7 @@ PRIMARY KEY (cliente_id)
 
 CREATE TABLE IF NOT EXISTS operaciones(
 id_operacion INT NOT NULL AUTO_INCREMENT,
-tipo_operacion VARCHAR(20),
+tipo_operacion VARCHAR(30),
 PRIMARY KEY (id_operacion)
 );
 
@@ -55,16 +55,16 @@ tipo_cuenta VARCHAR(30),
 PRIMARY KEY(id_tipo)
 );
 
+CREATE TABLE IF NOT EXISTS moneda(
+id_moneda INT NOT NULL AUTO_INCREMENT,
+nombre_moneda VARCHAR(20),
+PRIMARY KEY(id_moneda)
+);
+
 CREATE TABLE IF NOT EXISTS puesto_laboral(
 id_puesto INT NOT NULL AUTO_INCREMENT,
 puesto_nombre VARCHAR(20),
 PRIMARY KEY(id_puesto)
-);
-
-CREATE TABLE IF NOT EXISTS moneda(
-id_moneda INT NOT NULL AUTO_INCREMENT,
-nombre_moneda VARCHAR(10),
-PRIMARY KEY(id_moneda)
 );
 
 CREATE TABLE IF NOT EXISTS sucursal(
@@ -72,7 +72,7 @@ id_sucursal INT NOT NULL AUTO_INCREMENT,
 direccion VARCHAR(70),
 provincia INT,
 localidad INT,
-PRIMARY KEY(id_sucursal),
+PRIMARY KEY(id_sucursal), 
 FOREIGN KEY(provincia) references provincias(id_provincia),
 FOREIGN KEY(localidad) references localidades(id_localidad)
 );
@@ -82,36 +82,35 @@ id_transaccion INT NOT NULL AUTO_INCREMENT,
 tipo_transaccion INT NOT NULL,
 fecha TIMESTAMP NOT NULL,
 estado INT,
-monto INT,
+monto FLOAT,
 id_cliente INT NOT NULL,
 PRIMARY KEY (id_transaccion),
-FOREIGN KEY (id_cliente) references cliente(cliente_id),
+FOREIGN KEY (id_cliente) references clientes(cliente_id),
 FOREIGN KEY(tipo_transaccion) references operaciones(id_operacion),
 FOREIGN KEY(estado) references estado(id_estado)
 );
 
 CREATE TABLE IF NOT EXISTS cuenta(
-id_cuenta INT NOT NULL,
+id_cuenta INT NOT NULL AUTO_INCREMENT,
 id_cliente INT NOT NULL,
 tipo_cuenta INT,
 tipo_moneda INT,
-saldo INT,
-movimiento_id INT,
+saldo FLOAT,
 id_sucursal INT,
 PRIMARY KEY(id_cuenta),
-FOREIGN KEY(id_cliente) references cliente(cliente_id),
+FOREIGN KEY(id_cliente) references clientes(cliente_id),
 FOREIGN KEY(tipo_cuenta) references clasificacion_cuenta(id_tipo),
 FOREIGN KEY(tipo_moneda) references moneda(id_moneda),
 FOREIGN KEY(id_sucursal) references sucursal(id_sucursal)
 );
 
 CREATE TABLE IF NOT EXISTS empleados(
-id_empleado INT NOT NULL,
+id_empleado INT NOT NULL AUTO_INCREMENT,
 nombre VARCHAR(20),
 apellido VARCHAR(20),
-cuil INT,
+cuil VARCHAR(11),
 direccion VARCHAR(50),
-telefono INT,
+telefono VARCHAR(10),
 fecha_ingreso DATE,
 puesto INT,
 sucursal_empleo INT,

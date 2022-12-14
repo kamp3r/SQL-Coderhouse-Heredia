@@ -15,12 +15,18 @@ BEGIN
 END
 $$
 
-DROP FUNCTION IF EXISTS fn_calcular_clientes_provincia;
+/*La funcion calcular clientes por sucursal, nos permite ingresando el ID de la sucursal, saber cuantos clientes presenta la misma*/
+
+DROP FUNCTION IF EXISTS fn_calcular_clientes_por_sucursal;
 DELIMITER $$
-CREATE FUNCTION fn_calcular_clientes_provincia (p_provincia_id INT)
-RETURNS VARCHAR
-READS SQL DATA
+CREATE FUNCTION fn_calcular_clientes_por_sucursal (p_sucursal_id INT)
+RETURNS INT
+DETERMINISTIC
 BEGIN
-	DECLARE antiguedad
-    
+	DECLARE cantidad_clientes_sucursal INT;
+    SELECT COUNT(id_cuenta) into cantidad_clientes_sucursal FROM cuenta
+    WHERE id_sucursal = p_sucursal_id;
+	RETURN cantidad_clientes_sucursal;
+END
+$$
     

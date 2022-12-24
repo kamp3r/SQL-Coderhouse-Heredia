@@ -24,7 +24,7 @@ RETURNS INT
 DETERMINISTIC
 BEGIN
 	DECLARE cantidad_clientes_sucursal INT;
-    SELECT COUNT(id_cuenta) into cantidad_clientes_sucursal FROM cuenta
+    SELECT COUNT(id_cuenta) into cantidad_clientes_sucursal FROM cuentas
     WHERE id_sucursal = p_sucursal_id;
 	RETURN cantidad_clientes_sucursal;
 END

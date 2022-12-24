@@ -132,7 +132,7 @@ INSERT INTO transacciones VALUES (NULL, 1, current_timestamp() ,1, 15000.00, 1),
 	(NULL, 3, current_timestamp() ,1, 78894.00, 14),
 	(NULL, 5, current_timestamp() ,1, 125741.66, 15);
 
-INSERT INTO cuenta VALUES (NULL, 15, 1, 1, 230000 ,7),
+INSERT INTO cuentas VALUES (NULL, 15, 1, 1, 230000 ,7),
 	(NULL, 14, 1, 1, 5533 ,6),
 	(NULL, 13, 1, 1, 12346 ,5),
 	(NULL, 12, 1, 1, 0 ,4),

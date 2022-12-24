@@ -4,7 +4,7 @@ USE bancaria;
 
 CREATE OR REPLACE VIEW clientes_cuentas_radicacion AS
 	(SELECT c.id_cliente, cli.nombre, cli.apellido, c.id_cuenta, cl.tipo_cuenta, tm.nombre_moneda AS tipo_moneda, c.saldo, pr.provincia, lc.localidad, s.direccion AS direccion_sucursal
-	FROM cuenta AS c
+	FROM cuentas AS c
 	INNER JOIN clientes AS cli ON c.id_cliente = cli.cliente_id
 	INNER JOIN clasificacion_cuenta AS cl ON c.tipo_cuenta = cl.id_tipo
 	INNER JOIN moneda AS tm ON c.tipo_moneda = tm.id_moneda

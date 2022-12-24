@@ -90,7 +90,7 @@ FOREIGN KEY(tipo_transaccion) references operaciones(id_operacion),
 FOREIGN KEY(estado) references estado(id_estado)
 );
 
-CREATE TABLE IF NOT EXISTS cuenta(
+CREATE TABLE IF NOT EXISTS cuentas(
 id_cuenta INT NOT NULL AUTO_INCREMENT,
 id_cliente INT NOT NULL,
 tipo_cuenta INT,

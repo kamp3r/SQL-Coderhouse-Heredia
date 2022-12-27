@@ -4,12 +4,12 @@ USE bancaria;
 
 DROP FUNCTION IF EXISTS fn_calcular_antiguedad;
 DELIMITER $$
-CREATE FUNCTION fn_calcular_antiguedad (p_id INT)
+CREATE FUNCTION fn_calcular_antiguedad (p_id INT, p_param CHAR(5))
 RETURNS BIGINT
 READS SQL DATA
 BEGIN
 	DECLARE antiguedad BIGINT;
-	SELECT TIMESTAMPDIFF(YEAR, fecha_ingreso, NOW()) into antiguedad FROM empleados
+	SELECT TIMESTAMPDIFF(p_param, fecha_ingreso, NOW()) into antiguedad FROM empleados
 	WHERE p_id = id_empleado;
     RETURN antiguedad;
 END

@@ -1,7 +1,7 @@
 USE bancaria;
 
-INSERT INTO provincias VALUES (NULL, 'Buenos Aires'),
-	 (NULL, 'Ciudad Autonoma de Buenos Aires'),
+INSERT INTO provincias VALUES (NULL, 'Ciudad Autonoma de Buenos Aires'),
+	 (NULL, 'Buenos Aires'),
 	 (NULL, 'Catamarca'),
 	 (NULL, 'Chaco'),
 	 (NULL, 'Chubut'), 
@@ -25,7 +25,7 @@ INSERT INTO provincias VALUES (NULL, 'Buenos Aires'),
 	 (NULL, 'Tierra del Fuego'),
 	 (NULL, 'Tucuman');
 	 
- INSERT INTO localidades VALUES (NULL, 'La Plata'),
+ /*INSERT INTO localidades VALUES (NULL, 'La Plata'),
 	 (NULL, 'Ciudad Autonoma de Buenos Aires'),
 	 (NULL, 'San Fernando del Valle de Catamarca'),
 	 (NULL, 'Resistencia'),
@@ -49,7 +49,7 @@ INSERT INTO provincias VALUES (NULL, 'Buenos Aires'),
 	 (NULL, 'Ciudad de Santiago del Estero'),
 	 (NULL, 'Ushuaia'),
 	 (NULL, 'San Miguel de Tucuman');
- 
+ */
  INSERT INTO clientes VALUES (NULL, 'Marcos', 'Acuña', '38145789', 'San Jorge 1234', '1993-12-01'),
 	 (NULL, 'Jaime', 'Allon', '18746879', 'Pieres 456', '1963-05-21'),
 	 (NULL, 'Maria Laura', 'Tazer', '30695123', 'Coquimboe 777', '1982-04-02'),

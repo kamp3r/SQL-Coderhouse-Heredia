@@ -1,5 +1,5 @@
 /*Empezamos seteando la variable global autocommit en 0 para evitar que automaticamente realice los commits, asi mismo tambien se deshabilita el checkeo de claves foraneas*/
-/*USE bancaria;
+USE bancaria;
 
 SET @@AUTOCOMMIT = 0;
 SET @@FOREIGN_KEY_CHECK = 0;
@@ -22,7 +22,7 @@ SELECT * FROM clientes; -- SENTENCIA PARA VERIFICAR QUE LA ELIMINACION FUE CORRE
 
 /*FINAL DE LA ELIMINACION DE CLIENTES, COMIENZO DE LA SEGUNDA TRANSACCION, DONDE VAMOS A INSERTAR LOCALIDADES EN LA TABLA DEL MISMO NOMBRE*/
 
-/*START TRANSACTION;
+START TRANSACTION;
 
 INSERT INTO localidades VALUES (NULL, 'Moreno'),
 	(NULL, 'San Justo'),
@@ -38,4 +38,4 @@ SAVEPOINT localidades2;
 -- RELEASE SAVEPOINT localidades1;
 
 COMMIT;
-*/
+

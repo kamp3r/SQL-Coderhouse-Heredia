@@ -1,0 +1,12 @@
+Orden de ejecucion de scripts:
+
+1- Creacion de esquema y tablas: El primer archivo en ejecutarse dara la estructura a nuestra base de datos llamado base_bancaria.sql.
+2- Insercion de datos: El segundo archivo en ejecutarse nutrira nuestra base de datos de informacion, este archivo es insercion_datos.sql
+3- Vistas: El tercer archivo en ejectuarse es el llamado vistas.sql.
+4- Funciones: El cuarto archivo en ejecutarse es el llamado funciones.sql.
+5- Stored Procedures: El quinto archivo en ejecutarse es procedimientos.sql.
+6- Triggers + Tablas de auditoria: Este es el sexo archivo en ejecutarse, el cual incluye los disparadores y las tablas de "log",
+el archivo es triggerslog.sql
+7- Script DCL: Es el septimo archivo en ejecutarse y contiene la creacion de 3 usuarios, llamado dcl.sql
+8 - Script TCL: El ultimo archivo es el de transacciones, el cual esta comentado en su totalidad, ya que con los datos que inserte
+no encontre la necesidad de hacer mas inserciones por medio de las transacciones.
